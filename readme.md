@@ -1,40 +1,72 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Fully functional church web application
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+This project is meant to distribute functional web application to churches for free.It has most of church functionalities and can be downloaded and used freely
 
-## About Laravel
+## Getting Started
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Prerequisites
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+What things you need to install the software and how to install them
 
-## Learning Laravel
+```
+Laravel 5.4
+```
+```
+mysql database
+```
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+### Installing
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+A step by step series of examples that tell you how you have to get a development env running
 
-## Contributing
+Step 1(Clone repository)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+```
+Download or clone this repository into your local machine and extract the files if compressed into a local server ie wamp,xamp etc to a folder named "church"
+```
 
-## Security Vulnerabilities
+Step 2(create database)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+```
+Log into your local mysql and create database with the name "church"
+```
 
-## License
+Step 3(create database tables)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+```
+3.1 run php artisan migrate command to generate database tables.
+```
+or
+```
+3.2 import the "church.sql" file located in the root of this project
+```
+
+Step 4(test installation)
+
+```
+Go to http://localhost/church/public/ If it works then installation was successful
+```
+
+Step 5(application name)(optional)
+
+```
+Open .env file in the root of this project and change application name to your preference ie "church-of-christ".
+```
+
+Step 6(login and update)
+
+```
+Go to http://localhost/church/public/login and use email: admin@gmail.com and password: admin123
+```
+
+Congragulations installation has been sucessful!
+
+
+## Demo
+For demo https://www.church.jumbo.co.ke
+
+## Acknowledgments
+
+* Miss Carol Mathews for design inspiration and guidance.
