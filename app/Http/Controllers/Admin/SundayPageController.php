@@ -25,11 +25,6 @@ class SundayPageController extends Controller {
         $this->sundayschedule = $sundayschedule;
     }
 
-//    public function index() {
-//        $sundays = $this->sundayPage->orderBy('id', 'desc')->get();
-//
-//        return view('admin.sunday.page.list', compact('sundays'));
-//    }
 
     public function create($id) {
         $sundayschedule = $this->sundayschedule->find($id);

@@ -213,13 +213,6 @@ class GalleryController extends Controller {
         if ($gallery->gallerycategory->url_key != "slideshow") {
             return array('status' => 500);
         }
-//        
-//        if (count($gallery) != 1 && $gallery->gallerycategory == null) {
-//            return Helpers::redirectWithMessage('gallery.list', 500, "Invalid reqeust");
-//        }
-//        if ($gallery->gallerycategory->url_key != "slideshow") {
-//            return Helpers::redirectWithMessage('gallery.list', 500, "Invalid reqeust");
-//        }
 
         return $gallery;
     }

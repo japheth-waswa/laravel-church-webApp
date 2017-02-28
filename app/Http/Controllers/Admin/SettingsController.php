@@ -23,44 +23,6 @@ class SettingsController extends Controller {
         $this->settings = $settings;
     }
 
-//    public function index() {
-//        $settingss = $this->settings->orderBy('id', 'desc')->get();
-//
-//        return view('admin.settings.list', compact('settingss'));
-//    }
-//
-//    public function create() {
-//        $settingsCategories = $this->settings->where('visible', 1)->get();
-//        if (count($settingsCategories) < 1) {
-//            return Helpers::redirectWithMessage('settingscategory.list', 404, "please add category or set visible!");
-//        }
-//        return view('admin.settings.add', compact('settingsCategories'));
-//    }
-//
-//    public function store(Request $request) {
-//
-//        //validate inputs
-//        $this->myValidator($request);
-//
-//        //get all form input data
-//        $data = $request->except('file', '_token');
-//
-//        //validate file
-//        $uploadStatus = FileManps::uploadFile($this->request->file('file'), 'image');
-//
-//        if ($uploadStatus['status'] == 200) {
-//            $data['logo_url'] = $uploadStatus['fileLocationName'];
-//            $data['url_key'] = Helpers::strToSlug($data['title']);
-//            $data['publish_date'] = Helpers::formatDateBasic($data['publish_date']);
-//            //create the model
-//            $this->settings->create($data);
-//            return Helpers::redirectWithMessage('settings.list', 200, "Congragulations saved !");
-//        }
-//        if ($uploadStatus['status'] != 200) {
-//            return Redirect::back()->with('errorCustom', $uploadStatus['message']);
-//        }
-//    }
-
     public function edit($id) {
         $settings = $this->settings->first();
 
@@ -150,30 +112,6 @@ class SettingsController extends Controller {
 
         return Helpers::redirectWithMessage('settings.edit', 200, "Congragulations updated !", array($settings->id));
     }
-
-//    public function destroy($id) {
-//        $settings = $this->settings->find($id);
-//        if (count($settings) != 1) {
-//            return Helpers::redirectWithMessage('settings.list', 500, "Invalid operation");
-//        }
-//
-//        $deleteStatus = FileManps::deleteFiles(array($settings->logo_url));
-//        $settings->delete();
-//        return Helpers::redirectWithMessage('settings.list', 200, "Successfuly deleted");
-//    }
-//
-//    public function visiblity($id, $value) {
-//        if (!is_numeric($value) || !is_numeric($id) || !array_key_exists($value, array('0', '1'))) {
-//            return Helpers::redirectWithMessage('settings.list', 500, "Invalid value");
-//        }
-//        $settings = $this->settings->find($id);
-//        if (count($settings) != 1) {
-//            return Helpers::redirectWithMessage('settings.list', 500, "Invalid operation");
-//        }
-//        $data['visible'] = $value;
-//        $settings->update($data);
-//        return Helpers::redirectWithMessage('settings.list', 200, "Successful update !");
-//    }
 
     public function myValidator($request, $update = false, $id = null) {
 
