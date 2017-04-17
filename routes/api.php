@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/sermons', [
+    'as' => 'ApiSermons',
+    'uses' => 'Api\ApiController@ApiSermon'
+]);

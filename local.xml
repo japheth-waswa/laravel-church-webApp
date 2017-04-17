@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Zozoconcepts
+ *
+ * 
+ *
+ * @category    design
+ * @package     zozoconcept
+ * @copyright   Copyright (c) 2014
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+-->
+<layout>
+	<default>
+		<reference name="head">
+			<action method="addLinkRel"><rel>stylesheet</rel><href>//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css</href></action>
+			<action method="addItem"><type>skin_js</type><name>js/bootstrap.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/jasny-bootstrap.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/holder.js</name></action>
+			<action method="addCss"><stylesheet>css/bootstrap.min.css</stylesheet></action>
+			<action method="addCss" ifconfig="hybrid/header/rtl" condition="1"><stylesheet>css/bootstrap.rtl.min.css</stylesheet></action>
+			
+			<action method="addCss"><stylesheet>css/jasny-bootstrap.min.css</stylesheet></action>
+			<action method="addCss" ><stylesheet>css/custom.css</stylesheet></action>
+			<action method="addCss" ifconfig="hybrid/header/rtl" condition="1"><stylesheet>css/rtl-responsive.css</stylesheet></action>
+			<action method="addCss" ifconfig="hybrid/header/rtl" condition="1"><stylesheet>css/rtl.css</stylesheet></action>
+			<action method="addItem"><type>skin_css</type><name>css/styles.css</name><params/></action>
+			<action method="addItem"><type>skin_css</type><name>css/configurableswatches.css</name><params/></action>
+			<action method="addItem"><type>skin_css</type><name>varmoIcons/varmo-icons.css</name><params/></action>
+			<action method="addItem"><type>skin_css</type><name>lineIcons/css/simple-line-icons.css</name><params/></action>
+			<!--
+			<action method="addItem"><type>skin_css</type><name>css/styles-ie.css</name><params/></action>
+			<action method="addItem"><type>skin_css</type><name>css/styles-ie7.css</name><params/><if>lte IE 7</if></action>
+			<action method="addItem"><type>skin_css</type><name>css/styles-ie8.css</name><params/><if>lte IE 8</if>			            </action>-->
+			<!-- Config style -->
+			<action method="addCss"><stylesheet helper="hybrid/cssgen/getDesigncss" /></action>
+			<action method="addCss"><stylesheet helper="hybrid/cssgen/getSettingscss" /></action>
+			<!-- Main library -->
+			<action method="addJs"><script>hybrid/jquery/jquery-1.11.3.min.js</script></action>
+			<action method="addJs"><script>hybrid/jquery/jquery-noconflict.js</script></action>
+			<action method="addJs"><script>hybrid/jquery/jquery-migrate-1.2.1.min.js</script></action>
+            <action method="addJs"><script>hybrid/jquery/jquery-ui.min.js</script></action>
+			<!-- Ajax add to cart-->
+			<action method="addJs"><script>hybrid/ajaxcart/ajaxaddto.js</script></action> 
+			<!-- hybrid lib-->
+			<action method="addItem"><type>skin_js</type><name>js/hybrid.js</name></action>
+			<!--Parallax effect library-->
+			<action method="addItem"><type>js</type><name>hybrid/jquery/plugins/parallax/jquery.stellar.min.js</name><params/></action>
+            <action method="addItem"><type>js</type><name>hybrid/jquery/plugins/parallax/jquery.parallax.js</name><params/></action>
+			<action method="addJs"><script>hybrid/jquery/jquery.cookie.js</script></action>
+			<!-- Sticky Js-->
+			<!--Parallax effect library-->
+			<action method="addItem" ifconfig="hybrid/header/sticky"><type>js</type><name>hybrid/jquery/plugins/sticky/jquery.sticky.js</name><params/></action>
+			<!-- Mega Menu Script and css -->
+			<action method="addJs"><script>hybrid/jquery/plugins/megamenu/js/enquire.js</script></action>
+			<action method="addJs"><script>hybrid/jquery/plugins/megamenu/js/jquery.easing.min.js</script></action>
+			<action method="addJs"><script>hybrid/jquery/plugins/megamenu/js/jquery.accordion.min.js</script></action>
+			
+			<action method="addItem"><type>skin_css</type><name>css/shared/grid12.css</name><params/></action>
+			<action method="addItem"><type>skin_css</type><name>css/shared/accordion.css</name><params/></action>
+			<action method="addItem"><type>skin_css</type><name>css/megamenu/menu.css</name></action>
+			<action method="addItem"><type>skin_css</type><name>css/megamenu/menu-accordion.css</name></action>
+			<action method="addItem"><type>skin_css</type><name>css/megamenu/menu-dropdown.css</name></action>
+			<action method="addItem"><type>skin_css</type><name>css/megamenu/menu-sidebar.css</name></action>
+			<!-- Remove Magento's default menu script -->
+			<action method="removeItem"><type>js</type><name>varien/menu.js</name><params/></action>
+			<!-- fancybox library CSS -->
+			<action method="addItem"><type>skin_css</type><name>css/fancybox/jquery.fancybox.css</name><params/></action>
+			<action method="addItem"><type>skin_css</type><name>css/fancybox/jquery.fancybox-buttons.css</name><params/></action>
+			<action method="addItem"><type>skin_css</type><name>css/fancybox/jquery.fancybox-thumbs.css</name><params/></action>
+			<!-- fancybox library JS -->
+			<action method="addJs"><script>hybrid/jquery/plugins/fancybox/js/jquery.fancybox.js</script></action>
+			<action method="addJs"><script>hybrid/jquery/plugins/fancybox/js/jquery.fancybox.pack.js</script></action>
+			<action method="addJs"><script>hybrid/jquery/plugins/fancybox/js/jquery.fancybox-buttons.js</script></action>
+			<action method="addJs"><script>hybrid/jquery/plugins/fancybox/js/jquery.fancybox-media.js</script></action> 
+			<action method="addJs"><script>hybrid/jquery/plugins/fancybox/js/jquery.fancybox-thumbs.js</script></action>
+			<action method="addJs"><script>hybrid/jquery/plugins/fancybox/js/jquery.mousewheel-3.0.6.pack.js</script></action>  
+			<!-- Animate Css-->
+			<action method="addItem"><type>skin_css</type><name>css/shared/animate.css</name><params/></action>
+			<!-- Owl carousel-->
+			<action method="addJs"><script>hybrid/jquery/plugins/owl-carousel/owl.carousel.min.js</script></action>  
+			<action method="addItem"><type>js_css</type><name>hybrid/jquery/plugins/owl-carousel/assets/owl.carousel.min.css</name></action>
+			<action method="addItem"><type>js_css</type><name>hybrid/jquery/plugins/owl-carousel/assets/owl.theme.default.min.css</name></action>
+			
+			
+			
+			<!-- Select Box Library -->
+			<action method="addJs"><script>hybrid/jquery/plugins/selectbox/jquery.selectbox.js</script></action>
+			<action method="addItem"><type>js_css</type><name>hybrid/jquery/plugins/selectbox/selectbox.css</name></action>
+
+			<!-- Start off canvas 
+            <block type="core/text_list" name="right_panel" as="right_panel" translate="label">
+                <label>Right Panel - Cart</label>
+            </block>-->
+			<!-- add configurable swatches as last loading script due to bug #003 -->
+			<action method="addItem"><type>skin_js</type><name>js/lib/imagesloaded.js</name></action>
+		</reference>
+		<reference name="root">
+			<action method="addBodyClass" ifconfig="hybrid/header/layout" condition="wide"><classname>wide</classname></action>
+			<action method="addBodyClass" ifconfig="hybrid_design/basic/dark_light" condition="dark"><classname>dark</classname></action>
+			<action method="addBodyClass" ifconfig="hybrid/header/rtl" condition="1"><classname>rtl</classname></action>
+		</reference>
+		<reference name="header">
+			<!--<action method="setTemplate"><template helper="hybrid/data/getHeaderTemplates" /></action>-->
+			<action method="setTemplate" ifconfig="hybrid/header/type" condition="page/html/header_type1.phtml"><template>page/html/header_type1.phtml</template></action>
+            <action method="setTemplate" ifconfig="hybrid/header/type" condition="page/html/header_type2.phtml"><template>page/html/header_type2.phtml</template></action>
+            <action method="setTemplate" ifconfig="hybrid/header/type" condition="page/html/header_type3.phtml"><template>page/html/header_type3.phtml</template></action>
+            <action method="setTemplate" ifconfig="hybrid/header/type" condition="page/html/header_type4.phtml"><template>page/html/header_type4.phtml</template></action>
+            <action method="setTemplate" ifconfig="hybrid/header/type" condition="page/html/header_type5.phtml"><template>page/html/header_type5.phtml</template></action>
+            <action method="setTemplate" ifconfig="hybrid/header/type" condition="page/html/header_type6.phtml"><template>page/html/header_type6.phtml</template></action>
+            <action method="setTemplate" ifconfig="hybrid/header/type" condition="page/html/header_type7.phtml"><template>page/html/header_type7.phtml</template></action>
+            <action method="setTemplate" ifconfig="hybrid/header/type" condition="page/html/header_type8.phtml"><template>page/html/header_type8.phtml</template></action>
+            <action method="setTemplate" ifconfig="hybrid/header/type" condition="page/html/header_type9.phtml"><template>page/html/header_type9.phtml</template></action>
+            <action method="setTemplate" ifconfig="hybrid/header/type" condition="page/html/header_type10.phtml"><template>page/html/header_type10.phtml</template></action>
+            <action method="setTemplate" ifconfig="hybrid/header/type" condition="page/html/header_type11.phtml"><template>page/html/header_type11.phtml</template></action>
+            <action method="setTemplate" ifconfig="hybrid/header/type" condition="page/html/header_type12.phtml"><template>page/html/header_type12.phtml</template></action>
+            <action method="setTemplate" ifconfig="hybrid/header/type" condition="page/html/header_type13.phtml"><template>page/html/header_type13.phtml</template></action>
+            <action method="setTemplate" ifconfig="hybrid/header/type" condition="page/html/header_type14.phtml"><template>page/html/header_type14.phtml</template></action>
+			<block type="directory/currency" name="store_currency" template="page/switch/currency.phtml"/>
+			<block type="catalog/product_compare_sidebar" name="compare_link">
+				<action method="setTemplate" ifconfig="hybrid/header/show_compare" condition="1"><template>catalog/product/compare/compare_link.phtml</template></action>
+			</block>
+			<block type="checkout/cart_sidebar" name="minicartdrop">
+                <action method="setTemplate"><template>checkout/cart/minicart-drop.phtml</template></action>
+			</block>
+		</reference>
+		<reference name="left">
+            <remove name="currency"/>
+            <remove name="left.newsletter"/>
+            <remove name="left.permanent.callout"/>
+        </reference>
+        <reference name="right">
+            <remove name="cart_sidebar"/>
+            <remove name="paypal.partner.right.logo"/>
+            <remove name="right.permanent.callout"/>
+        </reference>
+        <!--<reference name="right_panel">
+			<block type="checkout/cart_sidebar" name="minicart">
+                <action method="setTemplate"><template>checkout/cart/minicart-offcanvas.phtml</template></action>
+			</block>
+        </reference>-->
+		<reference name="before_body_end">
+            <block type="newsletter/subscribe" name="newsletter_popup">
+                <action method="setTemplate" ifconfig="hybrid/newsletter_popup/enabled" condition="2"><template>newsletter/popup.phtml</template></action>
+            </block>
+        </reference>
+	</default>
+	<catalog_product_view>
+        <reference name="head">
+            <action method="addJs"><script>hybrid/jquery/plugins/etalage/jquery.etalage.min.js</script></action>
+            <action method="addJs"><script>hybrid/jquery/plugins/etalage/jquery.zoom.min.js</script></action>
+            <action method="addItem"><type>js_css</type><name>hybrid/jquery/plugins/etalage/etalage.css</name></action>
+        </reference>
+		<reference name="right">
+			<block type="cms/block" name="static_left1_rtl" before="-"><action method="setBlockId" ifconfig="hybrid/header/rtl" condition="1"><block_id>block_static_left1_rtl</block_id></action></block>
+			<block type="cms/block" name="static_left1" before="-"><action method="setBlockId" ifconfig="hybrid/header/rtl" condition="0"><block_id>block_static_left1</block_id></action></block>
+		</reference>
+    </catalog_product_view>
+	<catalog_product_compare_index translate="label">
+        <remove name="right_panel"/>
+		<remove name="block_navmobile_staticlinks" />
+    </catalog_product_compare_index>
+	<cms_index_index>
+        <reference name="newsletter_popup">
+            <action method="setTemplate" ifconfig="hybrid/newsletter_popup/enabled" condition="1"><template>newsletter/popup.phtml</template></action>
+        </reference>
+    </cms_index_index>
+	<contacts_index_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+			
+        </reference>
+        <reference name="content">
+			<block type="core/template" name="google_map" after="contactForm" template="contacts/googlemap.phtml"/>
+            <remove name="pageHeader"/>
+        </reference>
+    </contacts_index_index>
+    <checkout_cart_index>
+    <remove name="checkout.cart.shipping" />
+</checkout_cart_index>
+</layout>

@@ -11,7 +11,7 @@
   |
  */
 
-define('site_name', 'St Monica Utawala');
+define('site_name', 'Church Name');
 
 Route::get('/', [
     'as' => 'homepage',
