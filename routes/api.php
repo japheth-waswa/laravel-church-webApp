@@ -28,5 +28,25 @@ Route::get('/sermons', [
 
 Route::get('/sermons', [
     'as' => 'ApiSermons',
-    'uses' => 'Api\ApiController@ApiSermon'
+    'uses' => 'Api\ApiController@Sermon'
+])->middleware('client_credentials');
+
+Route::get('/events', [
+    'as' => 'ApiEvents',
+    'uses' => 'Api\ApiController@Event'
+])->middleware('client_credentials');
+
+Route::get('/gallery', [
+    'as' => 'ApiGallery',
+    'uses' => 'Api\ApiController@Gallery'
+])->middleware('client_credentials');
+
+Route::get('/blogs', [
+    'as' => 'ApiBlog',
+    'uses' => 'Api\ApiController@Blog'
+])->middleware('client_credentials');
+
+Route::get('/schedules', [
+    'as' => 'ApiSchedules',
+    'uses' => 'Api\ApiController@sundaySchedule'
 ])->middleware('client_credentials');
