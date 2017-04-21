@@ -26,6 +26,11 @@ Route::get('/sermons', [
     'uses' => 'Api\ApiController@ApiSermon'
 ])->middleware('auth:api');**/
 
+Route::get('/validtoken', [
+    'as' => 'ApiValidToken',
+    'uses' => 'Api\ApiController@ValidToken'
+])->middleware('client_credentials');
+
 Route::get('/sermons', [
     'as' => 'ApiSermons',
     'uses' => 'Api\ApiController@Sermon'

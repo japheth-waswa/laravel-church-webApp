@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/wamp64/www/church/app/Http/Controllers/Api/ApiController.php</file>
             <file>file:/C:/wamp64/www/church/app/Http/Controllers/Frontend/MainController.php</file>
+            <file>file:/C:/wamp64/www/church/app/Model/Gallery.php</file>
             <file>file:/C:/wamp64/www/church/routes/web.php</file>
             <file>file:/C:/wamp64/www/church/routes/api.php</file>
         </group>

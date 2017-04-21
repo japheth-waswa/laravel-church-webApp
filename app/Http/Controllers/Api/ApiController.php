@@ -42,6 +42,11 @@ class ApiController extends Controller
         $this->sundayschedule = $sundayschedule;
     }
 
+	//check valid token
+public function ValidToken(){
+	return response()->json(array(),500);
+}
+	
     //returns donations
     public function Donation(){
         $donation = $this->donation->where('visible', 1)->first();
