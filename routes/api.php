@@ -31,6 +31,16 @@ Route::get('/sermons', [
     'uses' => 'Api\ApiController@Sermon'
 ])->middleware('client_credentials');
 
+Route::get('/sermon/{id}', [
+    'as' => 'ApiSermon',
+    'uses' => 'Api\ApiController@SermonSpecific'
+])->middleware('client_credentials');
+
+Route::get('/donations', [
+    'as' => 'ApiDonations',
+    'uses' => 'Api\ApiController@Donation'
+])->middleware('client_credentials');
+
 Route::get('/events', [
     'as' => 'ApiEvents',
     'uses' => 'Api\ApiController@Event'

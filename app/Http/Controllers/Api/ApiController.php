@@ -42,11 +42,24 @@ class ApiController extends Controller
         $this->sundayschedule = $sundayschedule;
     }
 
+    //returns donations
+    public function Donation(){
+        $donation = $this->donation->where('visible', 1)->first();
+        return response()->json($donation);
+        //return response()->json(request()->user());
+    }
+
     //returns sermons
     public function Sermon(){
         $sermons = $this->sermon->where('visible', 1)->orderBy('sermon_date', 'desc')->get();
         return response()->json($sermons);
         //return response()->json(request()->user());
+    }
+
+    //returns sermon
+    public function SermonSpecific($id){
+        $sermons = $this->sermon->find($id);
+        return response()->json($sermons);
     }
     //returns events
     public function Event() {
