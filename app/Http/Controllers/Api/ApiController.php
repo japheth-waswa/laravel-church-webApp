@@ -58,8 +58,8 @@ class ApiController extends Controller
 
     //returns sermon
     public function SermonSpecific($id){
-        $sermons = $this->sermon->find($id);
-        return response()->json($sermons);
+        $sermon = $this->sermon->where('id',$id)->where('visible',1)->first();
+        return response()->json($sermon);
     }
     //returns events
     public function Event() {
@@ -69,6 +69,11 @@ class ApiController extends Controller
                 })->get();
         $events = $this->event->where('visible', 1)->where('event_date', '>', date('Y-m-d H:i:s'))->orderBy('event_date', 'asc')->get();
         return response()->json(array('eventCategories'=>$eventcategories,'events'=>$events));
+    }
+    //returns events
+    public function EventSpecific($id) {
+        $event = $this->event->where('id',$id)->where('visible',1)->first();
+        return response()->json($event);
     }
     
     //returns gallery
@@ -80,6 +85,12 @@ class ApiController extends Controller
         return response()->json(array('galleryCategories'=>$gallerycategories,'galleries'=>$galleries));
     }
     
+    //returns specific gallery
+    public function GallerySpecific($id) {
+        $gallery = $this->gallery->where('id',$id)->where('visible',1)->with(['gallerycategory'])->first();
+        return response()->json($gallery);
+    }
+    
     //returns blog
      public function Blog() {
          $blogcategories = $this->blogCategory->where('visible', 1)->orderBy('id', 'desc')->whereHas('blogs', function ($query) {
@@ -88,6 +99,12 @@ class ApiController extends Controller
                 })->get();
         $blogs = $this->blog->where('visible', 1)->where('publish_date', '<=', date('Y-m-d'))->with(['comments'])->orderBy('publish_date', 'desc')->get();
         return response()->json(array('blogCategories'=>$blogcategories,'blogs'=>$blogs));
+    }
+    
+    //returns specific blog
+     public function BlogSpecific($id) {
+        $blog = $this->blog->where('id',$id)->where('visible',1)->with(['blogcategory','comments'])->first();
+        return response()->json($blog);
     }
     
     //returns sunday schedule

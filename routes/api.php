@@ -46,14 +46,29 @@ Route::get('/events', [
     'uses' => 'Api\ApiController@Event'
 ])->middleware('client_credentials');
 
+Route::get('/event/{id}', [
+    'as' => 'ApiEvent',
+    'uses' => 'Api\ApiController@EventSpecific'
+])->middleware('client_credentials');
+
 Route::get('/gallery', [
     'as' => 'ApiGallery',
     'uses' => 'Api\ApiController@Gallery'
 ])->middleware('client_credentials');
 
+Route::get('/gallery/{id}', [
+    'as' => 'ApiGallerySpecific',
+    'uses' => 'Api\ApiController@GallerySpecific'
+])->middleware('client_credentials');
+
 Route::get('/blogs', [
     'as' => 'ApiBlog',
     'uses' => 'Api\ApiController@Blog'
+])->middleware('client_credentials');
+
+Route::get('/blog/{id}', [
+    'as' => 'ApiBlogSpecific',
+    'uses' => 'Api\ApiController@BlogSpecific'
 ])->middleware('client_credentials');
 
 Route::get('/schedules', [
