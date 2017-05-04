@@ -185,8 +185,8 @@ Home Welcome
 <script>
 <?php if (isset($firstEvent)): ?>
         $(document).ready(function () {
-            $(".jss-countdown").countdown(new Date(<?php echo date("Y,n,j,g,i,s", strtotime($firstEvent->event_date)); ?>));
-    //    $(".jss-countdown").countdown(new Date(2017,2,24,24,0,0));
+            $(".jss-countdown").countdown(new Date(<?php echo date("Y,n-1,j,g,i,s", strtotime($firstEvent->event_date)); ?>));
+       //$(".jss-countdown").countdown(new Date(2017,5-1,6,12,0,0));
         });
 <?php endif; ?>
 </script>
