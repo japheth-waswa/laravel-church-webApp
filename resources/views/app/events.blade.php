@@ -91,7 +91,8 @@ $allSettings = Helpers::settingsVal(null, true);
                             @foreach($events as $event)
                             <div class="figure <?php echo count($event->eventcategory) > 0 ? $event->eventcategory->url_key : ""; ?>" id="event-item-{{ $event->id }}"> 
                                 <div class="item clearfix"> 
-                                    <a class=item-img href="event_details.html"> 
+                                    <!--<a class=item-img href="event_details.html">-->
+                                    <a class="item-img"> 
                                         @if(Helpers::fileExists($event->image_url))
                                         <img src="{{ asset($event->image_url) }}" > 
                                         @endif
