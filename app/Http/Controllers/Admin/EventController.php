@@ -60,7 +60,7 @@ class EventController extends Controller
         if ($uploadStatus['status'] == 200) {
             $data['image_url'] = $uploadStatus['fileLocationName'];
             $data['url_key'] = Helpers::strToSlug($data['title']);
-            $data['event_date'] = Helpers::formatDateBasic($data['event_date']);
+            $data['event_date'] = $data['event_date'].':00';
             //create the model
             $this->event->create($data);
             return Helpers::redirectWithMessage('event.list', 200, "Congragulations saved !");
@@ -94,7 +94,7 @@ class EventController extends Controller
         //get all form input data
         $data = $request->except('file', '_token');
         $data['url_key'] = Helpers::strToSlug($data['title']);
-        $data['event_date'] = Helpers::formatDateBasic($data['event_date']);
+        $data['event_date'] = $data['event_date'].':00';
         //upload file if isset
         $uploadStatus = array();
         if ($this->request->file('file') != null) {

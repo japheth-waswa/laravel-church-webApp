@@ -13,7 +13,8 @@ Add Event
 
 @section('stylespagelevel')
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<link href="{{ asset('adminassets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css') }}" rel="stylesheet" type="text/css" />
+<!--<link href="{{ asset('adminassets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css') }}" rel="stylesheet" type="text/css" />-->
+<link href="{{ asset('adminassets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('adminassets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css') }}" rel="stylesheet" type="text/css" />
 <!-- END PAGE LEVEL PLUGINS -->
 @endsection
@@ -118,8 +119,8 @@ Add Event
                                 <label for="form_control_1">Category</label>
                             </div>
                             <div class="form-group form-md-line-input form-md-floating-label">
-                                <input type="text" class="form-control input-medium date-picker" id="form_control_1" name="event_date" required="" 
-                                       value="<?php echo null !== old('event_date') ? old('event_date') : (null !== ($event) ? date("m/d/Y", strtotime($event->event_date)) : null); ?>">
+                                <input type="text" class="form-control input-medium date cust_form_datetime" id="form_control_1" name="event_date" required="" data-date-format="yyyy-mm-dd hh:ii" 
+                                       value="<?php echo null !== old('event_date') ? old('event_date') : (null !== ($event) ? date("Y-m-d H:i",strtotime($event->event_date)) : null); ?>">
                                 <label for="form_control_1">Event Date</label>
                             </div>
                             <div class="form-group form-md-line-input form-md-floating-label">
@@ -177,7 +178,8 @@ Add Event
 
 @section('scriptspluginpagelevel')
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="{{ asset('adminassets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}" type="text/javascript"></script>
+<!--<script src="{{ asset('adminassets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}" type="text/javascript"></script>-->
+<script src="{{ asset('adminassets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('adminassets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js') }}" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 @endsection
@@ -192,6 +194,11 @@ Add Event
 <script src="{{ asset('assets/filesManagement/ckeditor/ckeditor.js') }}" type="text/javascript"></script>
 <script>
 $(document).ready(function () {
+	
+	$('.cust_form_datetime').datetimepicker({
+    format: 'yyyy-mm-dd hh:ii'
+});
+	
     var txtContent = document.getElementById("content");
     CKEDITOR.replace(txtContent);
 });
