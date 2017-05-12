@@ -9,7 +9,7 @@ $sundayData = Helpers::sundaySchedule();?>
 @if($sundayData['today'] == true)
 Today's Schedule
 @else
-Sunday Schedule
+Upcoming Schedule
 @endif
 @endif
 

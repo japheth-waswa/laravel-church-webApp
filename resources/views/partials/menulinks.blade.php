@@ -69,7 +69,7 @@ $allSettings = Helpers::settingsVal(null,true);
                                         @if($sundayData['today'] == true)
                                         Today's Schedule
                                         @else
-                                        Sunday Schedule
+                                        Upcoming Schedule
                                         @endif
                                         
                                     </a>
