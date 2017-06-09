@@ -80,3 +80,13 @@ Route::get('/schedules', [
     'as' => 'ApiSchedules',
     'uses' => 'Api\ApiController@sundaySchedule'
 ])->middleware('client_credentials');
+
+Route::post('/blog-comment-post', [
+    'as' => 'ApiPostBlogComment',
+    'uses' => 'Api\ApiController@blogCommentPost'
+])->middleware('client_credentials');
+
+Route::post('/event-register-post', [
+    'as' => 'ApiEventRegister',
+    'uses' => 'Api\ApiController@postEventRegister'
+])->middleware('client_credentials');

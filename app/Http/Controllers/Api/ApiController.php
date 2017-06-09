@@ -37,8 +37,8 @@ class ApiController extends Controller
         $this->eventcategory = $eventcategory;
         $this->gallerycategory = $gallerycategory;
         //$this->contact = $contact;
-        //$this->comment = $comment;
-        //$this->eventRegistar = $eventRegistar;
+        $this->comment = $comment;
+        $this->eventRegistar = $eventRegistar;
         $this->sundayschedule = $sundayschedule;
     }
 
@@ -121,5 +121,29 @@ public function ValidToken(){
                         $query->orderBy('page_order', 'asc');
                     }])->orderBy('sunday_date', 'desc')->first();
         return response()->json($sundayschedule);
+    }
+    
+    //post blog comments
+    public function blogCommentPost() {
+
+        //'names','email', 'phone', 'message', 'blog_id', 'visible','viewed'
+        $data = $this->request->all();
+        if(!isset($data['names']) || !isset($data['message']) || !isset($data['blog_id'])){
+            return response()->json(array('message' => 'Relevant fields must be present'),500);
+        }
+        $this->comment->create($data);
+        return response()->json(array('message' => 'Saved successfuly'),200);
+    }
+    
+    //post event registar
+    public function postEventRegister() {
+
+        //'firstname', 'lastname', 'phone','email','event_id'
+        $data = $this->request->all();
+        if(!isset($data['firstname']) || !isset($data['event_id'])){
+            return response()->json(array('message' => 'Relevant fields must be present'),500);
+        }
+        $this->eventRegistar->create($data);
+        return response()->json(array('message' => 'Saved successfuly'),200);
     }
 }
