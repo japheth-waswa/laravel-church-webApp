@@ -108,6 +108,11 @@ Add Blog
                                        value="<?php echo null !== old('author_name') ? old('author_name') : (null !== ($blog) ? $blog->author_name : null); ?>">
                                 <label for="form_control_1">Author Name</label>
                             </div>
+                             <div class="form-group form-md-line-input form-md-floating-label">
+                                <input type="text" class="form-control" id="form_control_1" name="author_image_url" 
+                                       value="<?php echo null !== old('author_image_url') ? old('author_image_url') : (null !== ($blog) ? $blog->author_image_url : null); ?>">
+                                <label for="form_control_1">Author Image Url</label>
+                            </div>
                             <div class="form-group form-md-line-input form-md-floating-label has-info">
                                 <?php $categoryVal = null !== old('blog_category_id') ? old('blog_category_id') : (null !== ($blog) ? $blog->blog_category_id : null); ?>
                                 <select class="form-control edited text-capitalize" id="form_control_1" name="blog_category_id">

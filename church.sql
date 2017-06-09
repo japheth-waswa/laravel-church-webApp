@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2017 at 08:23 AM
+-- Generation Time: Jun 09, 2017 at 07:47 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -34,6 +34,7 @@ CREATE TABLE `blogs` (
   `brief_description` text COLLATE utf8mb4_unicode_ci,
   `content` text COLLATE utf8mb4_unicode_ci,
   `author_name` text COLLATE utf8mb4_unicode_ci,
+  `author_image_url` text COLLATE utf8mb4_unicode_ci,
   `publish_date` timestamp NULL DEFAULT NULL,
   `blog_category_id` int(11) NOT NULL DEFAULT '0',
   `author_id` int(11) NOT NULL DEFAULT '0',
@@ -47,9 +48,9 @@ CREATE TABLE `blogs` (
 -- Dumping data for table `blogs`
 --
 
-INSERT INTO `blogs` (`id`, `title`, `url_key`, `image_url`, `brief_description`, `content`, `author_name`, `publish_date`, `blog_category_id`, `author_id`, `visible`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'title of my blog', 'title-of-my-blog', 'assets/uploads/images/627088758.jpg', 'i never said it would be an easy walk down the memory lane', '<p><span style="background-color:#FFFF00">brief content comes here</span></p>\r\n\r\n<p><span style="background-color:#FFFF00">fsd sdf sdf sdf sdf dsfa sdfs</span></p>\r\n\r\n<p>&nbsp;dffsdf asd<img alt="" class="img-responsive" src="/st-monica-utawala/public/assets/filesManagement/uploads/images/thumb-6.jpg" style="height:443px; width:370px" /></p>', 'Jeff lilcot', '2017-02-24 21:00:00', 1, 0, 1, '2017-02-25 03:59:43', '2017-05-04 03:35:17', NULL),
-(2, 'God is my true Father', 'god-is-my-true-father', 'assets/uploads/images/728081597.jpg', 'Yes of course you can! Though when you’re there you might find it more comfortable to sing along or even to join in the prayers as you won’t feel quite so isolated as you will if you don’t involve yourself.', '<h1><img alt="" class="img-responsive" src="/church/public/assets/filesManagement/uploads/images/background-onepage-video.jpg" style="height:400px; width:738px" /></h1>\r\n\r\n<div class="entry-content" style="box-sizing: border-box; color: rgb(34, 35, 92); font-family: open_sansregular, Arial, sans-serif; font-size: 14px;">\r\n<div class="quote" style="box-sizing: border-box; max-width: 100%; margin-left: 60px; margin-right: 60px; margin-bottom: 20px; padding: 0px; clear: right; border-left: 1px solid rgb(195, 195, 195); background: url(">\r\n<blockquote>\r\n<p><strong>I&rsquo;m interested in going to church but don&rsquo;t know where to start</strong></p>\r\n</blockquote>\r\n</div>\r\n\r\n<p>Getting started with anything new is never easy.</p>\r\n\r\n<p>One would be to go to church with someone you know who does go. You could sit with them and they could help you by explaining what happens and so on. Perhaps they might introduce you to some others who are there.</p>\r\n\r\n<p>If you&rsquo;d rather go on your own then don&rsquo;t arrive too early, five minutes before the starting time is ok and make sure you sit near the back. That way you won&rsquo;t feel quite so exposed.</p>\r\n\r\n<p>Do ask if you can join others in a row where they are. And never feel you can&rsquo;t ask questions of others around you.</p>\r\n\r\n<p>It&rsquo;s also good if you&rsquo;re new to a church to say to people you&rsquo;ve never been before. Churches can be very friendly places and most folk are only too glad to be of help.</p>\r\n\r\n<div class="quote" style="box-sizing: border-box; max-width: 100%; margin-left: 60px; margin-right: 60px; margin-bottom: 20px; padding: 0px; clear: right; border-left: 1px solid rgb(195, 195, 195); background: url(">\r\n<blockquote>\r\n<p><strong>Can I go to church if I don&rsquo;t believe in God/sceptical/don&rsquo;t know what I believe?</strong></p>\r\n</blockquote>\r\n</div>\r\n\r\n<p>Yes of course you can! Though when you&rsquo;re there you might find it more comfortable to sing along or even to join in the prayers as you won&rsquo;t feel quite so isolated as you will if you don&rsquo;t involve yourself.</p>\r\n\r\n<p>You can always ask to speak to the minister or priest during the week to discuss what believing means.</p>\r\n</div>', 'carol Mathews', '2017-02-25 21:00:00', 2, 0, 1, '2017-02-26 07:37:39', '2017-02-27 08:59:46', NULL);
+INSERT INTO `blogs` (`id`, `title`, `url_key`, `image_url`, `brief_description`, `content`, `author_name`, `author_image_url`, `publish_date`, `blog_category_id`, `author_id`, `visible`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'title of my blog', 'title-of-my-blog', 'assets/uploads/images/627088758.jpg', 'i never said it would be an easy walk down the memory lane', '<p><span style="background-color:#FFFF00">brief content comes here</span></p>\r\n\r\n<p><span style="background-color:#FFFF00">fsd sdf sdf sdf sdf dsfa sdfs</span></p>\r\n\r\n<p>&nbsp;dffsdf asd<img alt="" class="img-responsive" src="/st-monica-utawala/public/assets/filesManagement/uploads/images/thumb-6.jpg" style="height:443px; width:370px" /></p>', 'Jeff lilcot', NULL, '2017-02-24 21:00:00', 1, 0, 1, '2017-02-25 03:59:43', '2017-05-04 03:35:17', NULL),
+(2, 'God is my true Father', 'god-is-my-true-father', 'assets/uploads/images/728081597.jpg', 'Yes of course you can! Though when you’re there you might find it more comfortable to sing along or even to join in the prayers as you won’t feel quite so isolated as you will if you don’t involve yourself.', '<h1><img alt="" class="img-responsive" src="/church/public/assets/filesManagement/uploads/images/background-onepage-video.jpg" style="height:400px; width:738px" /></h1>\r\n\r\n<div class="entry-content" style="box-sizing: border-box; color: rgb(34, 35, 92); font-family: open_sansregular, Arial, sans-serif; font-size: 14px;">\r\n<div class="quote" style="box-sizing: border-box; max-width: 100%; margin-left: 60px; margin-right: 60px; margin-bottom: 20px; padding: 0px; clear: right; border-left: 1px solid rgb(195, 195, 195); background: url(">\r\n<blockquote>\r\n<p><strong>I&rsquo;m interested in going to church but don&rsquo;t know where to start</strong></p>\r\n</blockquote>\r\n</div>\r\n\r\n<p>Getting started with anything new is never easy.</p>\r\n\r\n<p>One would be to go to church with someone you know who does go. You could sit with them and they could help you by explaining what happens and so on. Perhaps they might introduce you to some others who are there.</p>\r\n\r\n<p>If you&rsquo;d rather go on your own then don&rsquo;t arrive too early, five minutes before the starting time is ok and make sure you sit near the back. That way you won&rsquo;t feel quite so exposed.</p>\r\n\r\n<p>Do ask if you can join others in a row where they are. And never feel you can&rsquo;t ask questions of others around you.</p>\r\n\r\n<p>It&rsquo;s also good if you&rsquo;re new to a church to say to people you&rsquo;ve never been before. Churches can be very friendly places and most folk are only too glad to be of help.</p>\r\n\r\n<div class="quote" style="box-sizing: border-box; max-width: 100%; margin-left: 60px; margin-right: 60px; margin-bottom: 20px; padding: 0px; clear: right; border-left: 1px solid rgb(195, 195, 195); background: url(">\r\n<blockquote>\r\n<p><strong>Can I go to church if I don&rsquo;t believe in God/sceptical/don&rsquo;t know what I believe?</strong></p>\r\n</blockquote>\r\n</div>\r\n\r\n<p>Yes of course you can! Though when you&rsquo;re there you might find it more comfortable to sing along or even to join in the prayers as you won&rsquo;t feel quite so isolated as you will if you don&rsquo;t involve yourself.</p>\r\n\r\n<p>You can always ask to speak to the minister or priest during the week to discuss what believing means.</p>\r\n</div>', 'carol Mathews', NULL, '2017-02-25 21:00:00', 2, 0, 1, '2017-02-26 07:37:39', '2017-02-27 08:59:46', NULL);
 
 -- --------------------------------------------------------
 
@@ -103,7 +104,13 @@ CREATE TABLE `comments` (
 INSERT INTO `comments` (`id`, `names`, `email`, `phone`, `message`, `blog_id`, `visible`, `viewed`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'jslkdf sa', 'jfdaslkdfj@gmail.com', 'fjsa', 'fjsakldfsa dfjklasfj kdsl jasfd', 0, 0, 0, '2017-02-26 03:14:00', '2017-02-26 05:17:42', '2017-02-26 05:17:42'),
 (2, 'h', 'fsd@gmail.com', NULL, 'jkhkjh jkh kj', 1, 0, 1, '2017-02-26 03:20:53', '2017-02-26 05:40:34', NULL),
-(3, 'jeff', 'jean@gmail.com', 'fasdfasd', 'wow great content', 2, 1, 1, '2017-02-26 07:38:22', '2017-05-15 06:20:14', NULL);
+(3, 'jeff', 'jean@gmail.com', 'fasdfasd', 'wow great content', 2, 1, 1, '2017-02-26 07:38:22', '2017-05-15 06:20:14', NULL),
+(4, 'api blog comment', 'japhethwaswa@gmail.com', '0988', 'i never said it would be easy', 2, 1, 0, '2017-06-09 02:47:04', '2017-06-09 02:47:04', NULL),
+(5, 'api blog comment', 'japhethwaswa@gmail.com', '0988', 'i never said it would be easy', 2, 1, 0, '2017-06-09 02:48:55', '2017-06-09 02:48:55', NULL),
+(6, 'jean waswa', 'jefflilcot@gmail.com', NULL, 'wow is this realy happening now or iam seing my own things ?', 1, 1, 0, '2017-06-09 03:51:34', '2017-06-09 03:51:34', NULL),
+(7, 'agin him', 'adin@gmail.com', NULL, 'well this is not my sure thing.', 2, 1, 0, '2017-06-09 03:53:21', '2017-06-09 03:53:21', NULL),
+(8, 'waswa', 'waswa@gmail.com', NULL, 'really people.', 2, 1, 0, '2017-06-09 04:01:56', '2017-06-09 04:01:56', NULL),
+(9, 'woo', 'wollo@gmail.com', NULL, 'fajlsdjfaslkdfasdfa', 2, 1, 0, '2017-06-09 04:41:09', '2017-06-09 04:41:09', NULL);
 
 -- --------------------------------------------------------
 
@@ -271,7 +278,16 @@ CREATE TABLE `event_registers` (
 INSERT INTO `event_registers` (`id`, `firstname`, `lastname`, `phone`, `email`, `event_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'jean', 'lilcot', '098777', 'jeany@gmail.com', 2, '2017-02-26 03:45:56', '2017-02-26 03:45:56', NULL),
 (2, 'h', 'k', '09', 'fsd@gmail.com', 1, '2017-02-26 03:48:11', '2017-02-26 03:48:11', '2017-02-07 21:00:00'),
-(3, 'fjas', 'fjlkds', 'fjdklf', 'jdfklsafjdl@gmail.com', 1, '2017-02-26 07:42:03', '2017-02-26 07:42:03', NULL);
+(3, 'fjas', 'fjlkds', 'fjdklf', 'jdfklsafjdl@gmail.com', 1, '2017-02-26 07:42:03', '2017-02-26 07:42:03', NULL),
+(4, 'jefflilcot', NULL, NULL, NULL, 7, '2017-06-09 02:53:36', '2017-06-09 02:53:36', NULL),
+(5, 'jeff lilcot', NULL, '0729837368', 'jefflilcot@gmail.com', 2, '2017-06-09 03:38:15', '2017-06-09 03:38:15', NULL),
+(6, 'jefflilcot', NULL, '0712122321', 'jefflilcot@gmail.com', 2, '2017-06-09 03:39:16', '2017-06-09 03:39:16', NULL),
+(7, 'japheth waswa', NULL, '0988888888', 'jefflicot@gmail.com', 2, '2017-06-09 03:40:20', '2017-06-09 03:40:20', NULL),
+(8, 'waswa jean', NULL, '0999999999', 'jefflilcot@gmail.com', 2, '2017-06-09 03:41:29', '2017-06-09 03:41:29', NULL),
+(9, 'waswa', NULL, '0000000000', 'aswa@gmail.com', 1, '2017-06-09 04:02:26', '2017-06-09 04:02:26', NULL),
+(10, 'waswa', NULL, '0000000000', 'jeandsla@gmail.com', 1, '2017-06-09 04:13:59', '2017-06-09 04:13:59', NULL),
+(11, 'another', NULL, '0909099090', 'wolla@gmail.com', 1, '2017-06-09 04:15:13', '2017-06-09 04:15:13', NULL),
+(12, 'rallgg', NULL, '0000000000', 'uoouiou@gmail.com', 2, '2017-06-09 04:15:54', '2017-06-09 04:15:54', NULL);
 
 -- --------------------------------------------------------
 
@@ -937,7 +953,7 @@ ALTER TABLE `blog_categories`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `congregations`
 --
@@ -967,7 +983,7 @@ ALTER TABLE `event_categories`
 -- AUTO_INCREMENT for table `event_registers`
 --
 ALTER TABLE `event_registers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `galleries`
 --

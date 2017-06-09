@@ -21,6 +21,7 @@ class CreateBlogsTable extends Migration
             $table->text('brief_description')->nullable();
             $table->text('content')->nullable();
             $table->text('author_name')->nullable();
+            $table->text('author_image_url')->nullable();
             $table->timestamp('publish_date')->nullable();
             $table->integer('blog_category_id')->default(0);
             $table->integer('author_id')->default(0);

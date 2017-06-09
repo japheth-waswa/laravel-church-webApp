@@ -12,7 +12,7 @@ class Blog extends Model
     protected $dates = ['deleted_at'];
     
     protected $fillable = ['title','url_key', 'image_url', 'brief_description', 'content','author_name',
-        'publish_date','blog_category_id','author_id','visible'];
+        'publish_date','author_image_url','blog_category_id','author_id','visible'];
     
        /**
      * Get the blog category that owns the blog.
