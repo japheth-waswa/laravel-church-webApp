@@ -42,6 +42,20 @@ class MainController extends Controller {
 
     //returns homepage
     public function index() {
+
+/**
+//get mysql db configuration with this
+foreach ($_SERVER as $key => $value) {
+ if (strpos($key, "MYSQLCONNSTR_localdb") !== 0) {
+ continue;
+ }$connectstr_dbhost = preg_replace("/^.*Data Source=(.+?);.*$/", "\\1", $value);
+ $connectstr_dbname = preg_replace("/^.*Database=(.+?);.*$/", "\\1", $value);
+ $connectstr_dbusername = preg_replace("/^.*User Id=(.+?);.*$/", "\\1", $value);
+ $connectstr_dbpassword = preg_replace("/^.*Password=(.+?)$/", "\\1", $value);
+ }
+**/
+
+
         $sliders = $this->slider->where('visible', 1)->orderBy('id', 'desc')->get();
         $events = $this->event->where('visible', 1)->where('event_date', '>', date('Y-m-d H:i:s'))->limit(4)->orderBy('event_date', 'asc')->get();
 //        $blogs = $this->blog->where('visible', 1)->where('publish_date', '>=', date('Y-m-d'))->limit(4)->orderBy('publish_date', 'asc')->get();

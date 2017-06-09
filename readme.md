@@ -65,7 +65,7 @@ Congragulations installation has been sucessful!
 
 
 ## Demo
-For demo https://www.church.jumbo.co.ke
+For demo http://waswachurch.azurewebsites.net
 
 ## Acknowledgments
 
