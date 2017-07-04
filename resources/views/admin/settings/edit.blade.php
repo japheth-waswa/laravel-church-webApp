@@ -229,10 +229,10 @@ Update Settings
                                 </div>
                                 <div>
                                     <span class="btn red btn-outline btn-file">
-                                        <span class="fileinput-new"> Select login image(1920x1077) </span>
-                                        <span class="fileinput-exists"> Change login image(1920x1077)</span>
+                                        <span class="fileinput-new"> Select Page Menu Image(1920x1077) </span>
+                                        <span class="fileinput-exists"> Change Page Menu Image(1920x1077)</span>
                                         <input type="hidden" value="" name=""><input type="file" name="page_menu_image"> </span>
-                                    <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove Login Image</a>
+                                    <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove Page Menu Image</a>
                                 </div>
                             </div>
 

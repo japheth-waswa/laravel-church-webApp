@@ -44,7 +44,6 @@ Home Welcome
                         @endif
                         <div class=item-content> 
                             <h5 class="text-capitalize">{{ $chunkedEvent->title }}</h5> 
-                            <p>{{ str_limit($chunkedEvent->brief_description,43) }}</p> 
                             <div class="item-footer clearfix"> 
                                 <div class=footer-content> 
                                     <div class="wrap clearfix"> <i class="fa fa-clock-o"></i> 
@@ -107,7 +106,7 @@ Home Welcome
                     <div class="item-content">
                         <h4>
                             <a href="{{route('singleblog',$blog->url_key)}}" class="headline-lato text-capitalize">
-                                {{ $blog->title }}
+                            {{ str_limit($blog->title,30) }}
                             </a>
                         </h4> 
                         <span>{{ date("d M,Y", strtotime($blog->publish_date)) }}</span> 

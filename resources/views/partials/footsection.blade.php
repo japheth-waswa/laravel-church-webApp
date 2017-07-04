@@ -69,7 +69,7 @@ $recentSermons = Helpers::recentSermons();
                                 <a href="{{ route('sermons').'#sermon-item-'.$recentSermon->id }}">{{ $recentSermon->title }}</a>
                             </h5> 
                             <h5 class="date">{{ date("F d, Y", strtotime($recentSermon->sermon_date)) }}</h5>
-                            <p>{{ str_limit($recentSermon->brief_description,73) }}</p> 
+                            <p>{{ str_limit($recentSermon->brief_description,23) }}</p> 
                         </div> 
                     </div>
                     @endforeach
