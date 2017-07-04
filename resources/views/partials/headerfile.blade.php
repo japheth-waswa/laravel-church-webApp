@@ -29,7 +29,16 @@ $allSettings = Helpers::settingsVal(null, true);
         <header> 
 
             @include('partials.menulinks')
-
+<style>
+            .cust-slider-text{
+                color:#ffffff !important;
+            }
+                @media screen and (max-width: 768px){
+.cust-slider-text{
+                color:#000000 !important;
+            }
+                }
+            </style> 
             <div class=content> 
                 <div class=container> 
                     <div class=row> 
@@ -37,15 +46,16 @@ $allSettings = Helpers::settingsVal(null, true);
                         <div class=header-top-right> 
                             @if($allSettings != false)
                             @if($allSettings->theme_title != false)
-                            <h2 class="text-capitalize">{{ $allSettings->theme_title }}</h2> 
+                            <h2 class="text-capitalize cust-slider-text">{{ $allSettings->theme_title }}</h2> 
                             @endif
                             @if($allSettings->theme_description != false)
-                            <p>{{ $allSettings->theme_description }}</p> 
+                            <p class="cust-slider-text">{{ $allSettings->theme_description }}</p> 
                             @endif
                             <!--<a href="" class="btn red-btn">join us</a>-->
                             @endif
                         </div> 
                     </div> 
                 </div> 
-            </div>  
+            </div> 
+            
         </header>  
