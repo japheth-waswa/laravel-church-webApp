@@ -11,9 +11,10 @@
          @if($allSettings != false)
         <meta name="description" content="{{ $allSettings->theme_description }}" />
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        
         <meta name="keywords" content="">
-        @endif
+                @endif
+<meta property="og:url" content="{{url()->current()}}" />
+@yield('pagemeta')
 
 
         <title>@yield('title') | <?php echo $allSettings != false ? $allSettings->website_name : "";?></title> 

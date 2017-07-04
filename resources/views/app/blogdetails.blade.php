@@ -1,6 +1,12 @@
 
 @extends('partials.master')
 
+@section('pagemeta')
+<meta property="og:title" content="{{ $blog->title }}" />
+<meta property="og:description" content="{{ $blog->brief_description }}" />
+<meta property="og:image" content="{{ asset($blog->image_url) }}" />
+@endsection
+
 @section('title')
 {{ $blog->title }}
 @endsection
@@ -36,7 +42,7 @@ $allSettings = Helpers::settingsVal(null, true);
                                 <i class="fa fa-linkedin"></i>
                             </a> 
                             <a href="https://plus.google.com/share?url={{url()->current()}}" target="_blank"><i class="fa fa-google-plus"></i></a> 
-
+                            <a href="whatsapp://send?text={{url()->current()}}" target="_blank"><i class="fa fa-whatsapp"></i></a> 
                         </div> 
                         <div> 
                         </div> 
