@@ -12,8 +12,8 @@ $allSettings = Helpers::settingsVal(null, true);
 ?>
 @if($allSettings != false)
 <section class=aboutus> 
-    <div class=container>
-        <div class=row> 
+    <div class="container">
+        <div class="row-fluid"> 
             {!! $allSettings->about_us !!}
         </div> 
     </div>

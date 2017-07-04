@@ -15,7 +15,7 @@ $recentSermons = Helpers::recentSermons();
                     @endif
                     @if($allSettings->primary_email != null)
                     <p>
-                    {{ str_limit($allSettings->theme_description,100) }}
+                        {{ str_limit($allSettings->theme_description,100) }}
                     </p>
                     @endif
                 </div> 
@@ -77,8 +77,28 @@ $recentSermons = Helpers::recentSermons();
                 @endif
             </div>
         </div> 
-        <h6 class="text-capitalize">&copy; {{ date('Y') }} {{ Helpers::settingsVal('website_name') }} .Powered by <a href="http://jemslab.com/" target=_blank><span>Jemslab</span></a></h6>
+        <!--<h6 class="text-capitalize">&copy; {{ date('Y') }} {{ Helpers::settingsVal('website_name') }} .Powered by <a href="http://jemslab.com/" target=_blank><span>Jemslab</span></a></h6>-->
+        <h6 class="text-capitalize">&copy; {{ date('Y') }} {{ Helpers::settingsVal('website_name') }} . <a data-toggle="modal" data-target="#event-modal-developer"><span>Developed by Elijah</span></a></h6>
     </div> 
 </footer> 
 <!--end footer-->
 
+<!-- Modal -->
+<div class="modal fade" id="event-modal-developer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Hire software developer</h4>
+            </div>
+            <div class="modal-body">
+                Email:<b>japhethwaswa@gmail.com</b><br>
+                Phone: <b>+254719726698</b><br>
+                LinkedIn: <b>https://ke.linkedin.com/in/japhethwaswa</b>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

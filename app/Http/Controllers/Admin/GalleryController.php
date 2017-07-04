@@ -52,15 +52,29 @@ class GalleryController extends Controller {
 
         if ($uploadStatus['status'] == 200) {
             $data['image_urls'] = $uploadStatus['fileLocationName'];
+
+            //implement large image if images
+            $uploadLarge = $this->uploadImageLargeImage($request, $data);
+            if ($uploadLarge['exists'] == true && $uploadLarge['uploaded'] == true) {
+                $data['large_image'] = $uploadLarge['url'];
+            } elseif($uploadLarge['exists'] == true && $uploadLarge['uploaded'] == false) {
+                return Redirect::back()->with('errorCustom', 'Error uploading large image');
+            
+            } else {
+                //do nothing bypass
+            }
+
             //create the model
             $this->gallery->create($data);
             return Helpers::redirectWithMessage('gallery.list', 200, "Congragulations saved !");
         }
+
         if ($uploadStatus['status'] != 200) {
             return Redirect::back()->with('errorCustom', $uploadStatus['message']);
         }
     }
 
+  
     public function edit($id) {
         $galleryCategories = $this->galleryCategory->where('visible', 1)->get();
         if (count($galleryCategories) < 1) {
@@ -102,6 +116,12 @@ class GalleryController extends Controller {
         if ($this->request->file('file') != null && array_key_exists('status', $gallerySlideshow) == true) {
             $data['image_urls'] = $uploadStatus['fileLocationName'];
             $deleteStatus = FileManps::deleteFiles(array($gallery->image_urls));
+        }
+
+        //implement large image if images
+        $uploadLarge = $this->uploadImageLargeImage($request, $data, true);
+        if ($uploadLarge['exists'] == true && $uploadLarge['uploaded'] == true) {
+            $data['large_image'] = $uploadLarge['url'];
         }
 
         $gallery->update($data);
@@ -216,7 +236,38 @@ class GalleryController extends Controller {
 
         return $gallery;
     }
+  public function uploadImageLargeImage($request, $data, $update = false) {
+        $galleryCategories = $this->galleryCategory->where('id', $data['gallery_category_id'])->first();
 
+        if (count($galleryCategories) != 1) {
+            return [
+                "exists" => false];
+        }
+
+        if (count($galleryCategories) == 1 && $galleryCategories->url_key != 'images') {
+            return [
+                "exists" => false];
+        }
+        $this->myValidatorLarge($request, $update);
+
+        if ($this->request->file('largefile') != null) {
+            $uploadStatus = FileManps::uploadFile($this->request->file('largefile'), 'image');
+
+            if ($uploadStatus['status'] == 200) {
+                return [
+                    "exists" => true,
+                    "uploaded" => true,
+                    "url" => $uploadStatus['fileLocationName']];
+            } else {
+                return [
+                    "exists" => true,
+                    "uploaded" => false];
+            }
+        }
+
+        return [
+            "exists" => false];
+    }
     public function myValidator($request, $update = false, $id = null) {
 
         $validationConfigs = [
@@ -232,6 +283,19 @@ class GalleryController extends Controller {
             $validationConfigs['file'] = 'required|image|max:100000';
         } elseif ($update == true) {
             $validationConfigs['file'] = 'nullable|image|max:100000';
+        }
+
+        $this->validate($request, $validationConfigs);
+    }
+
+    public function myValidatorLarge($request, $update = false, $id = null) {
+
+        $validationConfigs = [];
+
+        if ($update == false) {
+            $validationConfigs['largefile'] = 'required|image|max:100000';
+        } elseif ($update == true) {
+            $validationConfigs['largefile'] = 'nullable|image|max:100000';
         }
 
         $this->validate($request, $validationConfigs);

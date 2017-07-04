@@ -58,13 +58,13 @@ foreach ($_SERVER as $key => $value) {
 
         $sliders = $this->slider->where('visible', 1)->orderBy('id', 'desc')->get();
         $events = $this->event->where('visible', 1)->where('event_date', '>', date('Y-m-d H:i:s'))->limit(4)->orderBy('event_date', 'asc')->get();
-//        $blogs = $this->blog->where('visible', 1)->where('publish_date', '>=', date('Y-m-d'))->limit(4)->orderBy('publish_date', 'asc')->get();
+        $blogs = $this->blog->where('visible', 1)->where('publish_date', '<=', date('Y-m-d'))->orderBy('publish_date', 'desc')->get();
         $donation = $this->donation->where('visible', 1)->first();
-        $sermons = $this->sermon->where('visible', 1)->limit(4)->orderBy('sermon_date', 'desc')->get();
+//        $sermons = $this->sermon->where('visible', 1)->limit(4)->orderBy('sermon_date', 'desc')->get();
         $galleries = $this->gallery->where('visible', 1)->orderBy('id', 'desc')->whereHas('gallerycategory', function ($query) {
-                    $query->where('url_key', '!=', 'slideshow');
+                    $query->where('url_key', '=', 'images');
                 })->get();
-        return view('app.homepage', compact('sliders', 'events', 'galleries', 'sermons', 'donation'));
+        return view('app.homepage', compact('sliders', 'events', 'galleries', 'donation','blogs'));
     }
 
     //returns aboutus

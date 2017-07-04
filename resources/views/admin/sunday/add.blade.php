@@ -113,28 +113,28 @@ Add Sunday Schedule
                                 <?php $colCountVal = null !== old('column_count') ? old('column_count') : (null !== ($sundayschedule) ? $sundayschedule->column_count : null); ?>
                                 <div class="md-radio-inline">
                                     <div class="md-radio">
-                                        <input type="radio" id="radio6" name="column_count" class="md-radiobtn" value="12" <?php echo $colCountVal == 12 ? "checked" : null; ?> >
+                                        <input type="radio" id="radio6" name="column_count" class="md-radiobtn" value="1" <?php echo $colCountVal == 1 ? "checked" : null; ?> >
                                         <label for="radio6">
                                             <span class="inc"></span>
                                             <span class="check"></span>
                                             <span class="box"></span> 1 Column </label>
                                     </div>
                                     <div class="md-radio">
-                                        <input type="radio" id="radio7" name="column_count" class="md-radiobtn" value="6" <?php echo $colCountVal == 6 ? "checked" : null; ?> >
+                                        <input type="radio" id="radio7" name="column_count" class="md-radiobtn" value="2" <?php echo $colCountVal == 2 ? "checked" : null; ?> >
                                         <label for="radio7">
                                             <span class="inc"></span>
                                             <span class="check"></span>
                                             <span class="box"></span> 2 Columns </label>
                                     </div>
                                     <div class="md-radio">
-                                        <input type="radio" id="radio8" name="column_count" class="md-radiobtn" value="4" <?php echo $colCountVal == 4 ? "checked" : null; ?> >
+                                        <input type="radio" id="radio8" name="column_count" class="md-radiobtn" value="3" <?php echo $colCountVal == 3 ? "checked" : null; ?> >
                                         <label for="radio8">
                                             <span class="inc"></span>
                                             <span class="check"></span>
                                             <span class="box"></span> 3 Columns </label>
                                     </div>
                                     <div class="md-radio">
-                                        <input type="radio" id="radio9" name="column_count" class="md-radiobtn" value="3" <?php echo $colCountVal == 3 ? "checked" : null; ?> >
+                                        <input type="radio" id="radio9" name="column_count" class="md-radiobtn" value="4" <?php echo $colCountVal == 4 ? "checked" : null; ?> >
                                         <label for="radio9">
                                             <span class="inc"></span>
                                             <span class="check"></span>

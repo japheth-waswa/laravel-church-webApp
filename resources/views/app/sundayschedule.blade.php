@@ -7,9 +7,11 @@ $sundayData = Helpers::sundaySchedule();?>
 
 @if($sundayData['status'] == 200)
 @if($sundayData['today'] == true)
-Today's Schedule
+{{ $sundayschedule->theme_title }}
 @else
-Upcoming Schedule
+{{ $sundayschedule->theme_title }}
+<br>
+{{ date("F d,Y", strtotime($sundayschedule->sunday_date)) }}
 @endif
 @endif
 
@@ -33,20 +35,29 @@ Upcoming Schedule
 
 <section class=sermons> 
     <div class=container> 
+        <?php 
+        $sortedPage = $sundayschedule->sundaypages->sortBy('page_order'); 
+        $sortedPageArray = $sortedPage->toArray();
+        $columnCount = $sundayschedule->column_count; 
+        $columnBootstrap = $columnCount == 1 ?"12":($columnCount == 2 ? "6": ($columnCount == 3 ? "4" :($columnCount ==4 ? "3":"12")));
+        ?>
+        <?php foreach(array_chunk($sortedPageArray, $columnCount) as $chunkedPages):?>
         <div class="row"> 
-            <?php $sortedPage = $sundayschedule->sundaypages->sortBy('page_order'); ?>
-            @foreach($sortedPage as $sundayPage)
-            <div class="col-md-{{ $sundayschedule->column_count }}">
+            
+            @foreach($chunkedPages as $sundayPage)
+            <div class="col-md-{{ $columnBootstrap }}">
                 <div class="panel panel-default">
-                    <div class="ppanel-heading text-center text-bold text-warning"><h3>Page: {{ $sundayPage->page_order }}</h3></div>
+                    <div class="ppanel-heading text-bold text-warning"><h3>Page: {{ $sundayPage['page_order'] }}</h3></div>
                     <div class="panel-body">
-                        {!! $sundayPage->page_content !!}
+                        {!! $sundayPage['page_content'] !!}
                     </div>
                 </div>
 
             </div>
             @endforeach
         </div>
+        <?php endforeach;?>
+        
     </div>
 </section> 
 <hr>

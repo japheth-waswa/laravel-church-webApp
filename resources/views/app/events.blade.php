@@ -112,12 +112,34 @@ $allSettings = Helpers::settingsVal(null, true);
                                                 </div> 
                                             </div>
                                             <div class=footer-button> 
+                                                @if(strlen(trim($event->content))>0)
+                                                <a class="btn-middle btn-lightGrey margin-bottom-10"
+                                                   style="margin-bottom:10%;" data-toggle="modal" data-target="#event-modal{{ $event->id }}">Info</a> 
+                                                @endif
                                                 <a class="btn-middle btn-lightGrey open-registered" eventid="{{ $event->id }}" eventitle="{{ $event->title }}">register</a> 
                                             </div> 
                                         </div> 
                                     </div> 
                                 </div> 
                             </div> 
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="event-modal{{ $event->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">{{ $event->title }}</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            {!! $event->content !!}
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             @endforeach
 
                         </div> 

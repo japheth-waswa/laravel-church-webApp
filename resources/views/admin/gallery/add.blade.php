@@ -125,9 +125,7 @@ Add Gallery
 
                             <div class="form-group form-md-line-input form-md-floating-label">
                                 <textarea class="form-control" rows="3" name="brief_description" required="" 
-                                          style="margin: 0px -1px 0px 0px; height: 126px; width: 502px;">
-                                              <?php echo null !== old('brief_description') ? old('brief_description') : (null !== ($gallery) ? $gallery->brief_description : null); ?>
-                                </textarea>
+                                          style="margin: 0px -1px 0px 0px; height: 126px; width: 502px;"><?php echo null !== old('brief_description') ? old('brief_description') : (null !== ($gallery) ? $gallery->brief_description : null); ?></textarea>
                                 <label for="form_control_1">Brief Description</label>
                                 <span class="help-block">Brief description about the gallery.</span>
                             </div>
@@ -135,13 +133,14 @@ Add Gallery
                             @if(Route::currentRouteName() == 'gallery.edit')
                             @if(Helpers::fileExists($gallery->image_urls))
                             <div class="form-group">
-                                <h4>Current Image:</h4>
+                                <h4>Current Small Image:</h4>
                                 <img src="{{ asset($gallery->image_urls) }}" class="img-responsive img-thumbnail"  width="200px" height='200px'>
                             </div>
                             @endif
                             @endif
-                            
+
                             @if(false == (isset($gallery) && $gallery->gallerycategory->url_key == 'slideshow'))
+                            <h4>Smaller Image:</h4>
                             <div class="fileinput fileinput-exists margin-bottom-25" data-provides="fileinput">
                                 <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px; line-height: 150px;">
                                     <img>
@@ -152,6 +151,32 @@ Add Gallery
                                         <span class="fileinput-exists"> Change(398x274) </span>
                                         <input type="hidden" value="" name=""><input type="file" name="file"> </span>
                                     <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                </div>
+                            </div>
+
+                            <div id="large-image-holder">
+                                
+                            @if(Route::currentRouteName() == 'gallery.edit')
+                            @if(Helpers::fileExists($gallery->large_image))
+                            <div class="form-group">
+                                <h4>Current Large Image:</h4>
+                                <img src="{{ asset($gallery->large_image) }}" class="img-responsive img-thumbnail"  width="200px" height='200px'>
+                            </div>
+                            @endif
+                            @endif
+                            
+                                <h4>Larger Image(Only if category is images):</h4>
+                                <div class="fileinput fileinput-exists margin-bottom-25" data-provides="fileinput">
+                                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px; line-height: 150px;">
+                                        <img>
+                                    </div>
+                                    <div>
+                                        <span class="btn red btn-outline btn-file">
+                                            <span class="fileinput-new"> Select image</span>
+                                            <span class="fileinput-exists"> Change</span>
+                                            <input type="hidden" value="" name=""><input type="file" name="largefile"> </span>
+                                        <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                    </div>
                                 </div>
                             </div>
                             @endif

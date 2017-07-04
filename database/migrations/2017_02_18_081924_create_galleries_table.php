@@ -20,6 +20,7 @@ class CreateGalleriesTable extends Migration
             $table->text('image_urls')->nullable();
             $table->text('video_url')->nullable();
             $table->text('link_url')->nullable();
+            $table->text('large_image')->nullable();
             $table->integer('gallery_category_id')->default(0);
             $table->tinyInteger('visible')->default(1);
             $table->timestamps();

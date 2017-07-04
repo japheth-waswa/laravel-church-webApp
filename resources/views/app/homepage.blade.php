@@ -68,49 +68,52 @@ Home Welcome
 <figure class=gallery> 
     <ul class="gallery-wrapper clearfix"> 
         @foreach($galleries as $gallery)
+        @if(Helpers::fileExists($gallery->image_urls))
         <li class=items> 
-            <a href="{{ $gallery->image_urls }}" class=zoom> 
+            <a href="{{ $gallery->large_image }}" class=zoom> 
                 @if(Helpers::fileExists($gallery->image_urls))
                 <img src="{{ asset($gallery->image_urls) }}" alt=image> 
                 @endif
-                @if(Helpers::fileExists($gallery->image_urls))
+                @if(Helpers::fileExists($gallery->large_image))
                 <span class=h-effect> 
                     <img src="{{ asset('app/images/gallery_hover_icon.png') }}" class="item-container"> 
                 </span> 
                 @endif
             </a> 
         </li> 
+        @endif
         @endforeach
     </ul> <!--398x274-->
 </figure>
 @endif
 
-@if(count($sermons)>0)
-<section class=sermons> 
+@if(count($blogs)>0)
+<section class="sermons"> 
     <div class=container> 
         <div class=line-heading> 
             <h3>what's new?</h3>
         </div> 
-        <div class=row> 
-            <div class=figure-wrapper> 
-                @foreach($sermons as $sermon)
+        <div class="row"> 
+            <div class="figure-wrapper">                 
+                @foreach($blogs as $blog)
                 <div class="figure clearfix">
-                    <div class=item-figure>
-                        <div class=image-wrapper> 
-                            @if(Helpers::fileExists($sermon->image_url))
-                            <img src="{{ asset($sermon->image_url) }}" > 
+                    <div class="item-figure">
+                        <div class="image-wrapper"> 
+                            @if(Helpers::fileExists($blog->image_url))
+                            <img src="{{ asset($blog->image_url) }}" alt="{{ $blog->title }}"> 
                             @endif
                         </div> 
                     </div> 
-                    <div class=item-content>
+                    <div class="item-content">
                         <h4>
-                            <a href="{{ route('sermons').'#semon-item-'.$sermon->id }}" class="headline-lato text-capitalize">
-                                {{ $sermon->title }}
+                            <a href="{{route('singleblog',$blog->url_key)}}" class="headline-lato text-capitalize">
+                                {{ $blog->title }}
                             </a>
                         </h4> 
-                        <span>{{ date("d M,Y", strtotime($sermon->sermon_date)) }}</span> 
-                        <span>&nbsp;</span> 
-                        <p>{{ str_limit($sermon->brief_description,83) }}</p> 
+                        <span>{{ date("d M,Y", strtotime($blog->publish_date)) }}</span> 
+                        <span>By: {{ $blog->author_name }}</span> 
+                        <!--<span>&nbsp;</span>--> 
+                        <p>{{ str_limit($blog->brief_description,83) }}</p> 
                     </div> 
                 </div>
                 @endforeach
@@ -124,7 +127,7 @@ Home Welcome
 <section class="donation event-donation">
     <div class=container>
 
-        <div class=line-heading> <h3>urgent donations</h3> </div> 
+        <div class=line-heading> <h3>contributions</h3> </div> 
         <a class=prev-btn> <img src="{{ asset('app/images/left-arrow.jpg') }}" alt=image> </a> 
         <a class=next-btn> <img src="{{ asset('app/images/right_arrow.jpg') }}" alt=image> </a>
 

@@ -90,6 +90,7 @@ Sunday Schedule List
                     <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1">
                         <thead>
                             <tr>
+                                <th></th>
                                 <th> Theme title </th>
                                 <th> Sunday Date</th>
                                 <th> Pages</th>
@@ -101,6 +102,7 @@ Sunday Schedule List
                             @foreach($sundayscheduless as $sundayschedules)
                             <tr class="odd gradeX">
 
+                                <td></td>
                                 <td class="text-capitalize">
                                     {{ $sundayschedules->theme_title }}
                                 </td>

@@ -8,6 +8,12 @@ Gallery
 
 @section('content')
 
+<style>
+    /*    #list-item{
+            height: auto !important;
+        }*/
+</style>
+
 @if(count($galleries) > 0)
 <section class=gallery-page-wrapper> 
     <div class=container> 
@@ -23,12 +29,12 @@ Gallery
         </ul> 
         <div class=row> 
             <div class="wrapper isp-wrap"> 
-                <div class=clearfix id=list-item> 
+                <div class="clearfix" id="list-item"> 
 
                     @foreach($galleries as $gallery)
 
                     @if(count($gallery->gallerycategory) > 0 && $gallery->gallerycategory->url_key == 'links')
-                    <div class="figure {{ $gallery->gallerycategory->url_key }}"> 
+                    <div class="galleryholder figure {{ $gallery->gallerycategory->url_key }}"> 
                         <div class="item clearfix"> <div class=item-img> 
                                 @if(Helpers::fileExists($gallery->image_urls))
                                 <img src="{{ asset($gallery->image_urls) }}" alt="{{ $gallery->title }}"> 
@@ -41,7 +47,7 @@ Gallery
                             </div> 
                             <div class=item-content> 
                                 <h4 class="headline-lato text-capitalize">{{ $gallery->title }}</h4> 
-                                <p>{{ str_limit($gallery->brief_description,97) }}</p>
+                                <p>{{-- str_limit($gallery->brief_description,97) --}}</p>
                             </div> 
                         </div> 
                     </div> 
@@ -49,26 +55,27 @@ Gallery
 
 
                     @if(count($gallery->gallerycategory) > 0 && $gallery->gallerycategory->url_key == 'images')
-                    <div class="figure {{ $gallery->gallerycategory->url_key }}"> 
+                    <div class="galleryholder figure {{ $gallery->gallerycategory->url_key }}"> 
                         <div class="item clearfix"> <div class=item-img>
                                 @if(Helpers::fileExists($gallery->image_urls))
                                 <img src="{{ asset($gallery->image_urls) }}" alt="{{ $gallery->title }}"> 
-
+                                @endif
+                                @if(Helpers::fileExists($gallery->large_image))
                                 <div class=figcaption> 
-                                    <a href="{{ asset($gallery->image_urls) }}" class="zoom"> <i class="fa fa-file-image-o"></i> </a> 
+                                    <a href="{{ asset($gallery->large_image) }}" class="zoom"> <i class="fa fa-file-image-o"></i> </a> 
                                 </div>
                                 @endif
                             </div> 
                             <div class=item-content> 
                                 <h4 class="headline-lato text-capitalize">{{ $gallery->title }}</h4> 
-                                <p>{{ str_limit($gallery->brief_description,97) }}</p>
+                                <p>{{-- str_limit($gallery->brief_description,97) --}}</p>
                             </div> 
                         </div> 
                     </div>
                     @endif
 
                     @if(count($gallery->gallerycategory) > 0 && $gallery->gallerycategory->url_key == 'slideshow')
-                    <div class="figure {{ $gallery->gallerycategory->url_key }}">
+                    <div class="galleryholder figure {{ $gallery->gallerycategory->url_key }}">
                         <div class="item clearfix">
                             <div class="item-img slide-show"> 
                                 @if($gallery->image_urls != null)
@@ -86,14 +93,14 @@ Gallery
                             <a class=next-slide><i class="fa fa-angle-right"></i></a>
                             <div class=item-content> 
                                 <h4 class="headline-lato text-capitalize">{{ $gallery->title }}</h4> 
-                                <p>{{ str_limit($gallery->brief_description,97) }}</p>
+                                <p>{{-- str_limit($gallery->brief_description,97) --}}</p>
                             </div> 
                         </div>
                     </div> 
                     @endif
 
                     @if(count($gallery->gallerycategory) > 0 && $gallery->gallerycategory->url_key == 'video')
-                    <div class="figure {{ $gallery->gallerycategory->url_key }}"> 
+                    <div class="galleryholder figure {{ $gallery->gallerycategory->url_key }}"> 
                         <div class="item clearfix"> 
                             <div class=item-img> 
                                 @if(Helpers::fileExists($gallery->image_urls))
@@ -109,7 +116,7 @@ Gallery
                             </div> 
                             <div class=item-content> 
                                 <h4 class="headline-lato text-capitalize">{{ $gallery->title }}</h4> 
-                                <p>{{ str_limit($gallery->brief_description,97) }}</p>
+                                <p>{{-- str_limit($gallery->brief_description,97) --}}</p>
                             </div> 
                         </div>
                     </div>
@@ -118,9 +125,9 @@ Gallery
                     @endforeach
 
                 </div> 
-<!--                <div class=btn-load> 
-                    <a class="btn btn-grey" id="load-more" typeobj="gallery" limitobj="1" offsetobj="1">load more</a> 
-                </div> -->
+                <!--                <div class=btn-load> 
+                                    <a class="btn btn-grey" id="load-more" typeobj="gallery" limitobj="1" offsetobj="1">load more</a> 
+                                </div> -->
             </div> 
         </div> 
     </div> 

@@ -65,7 +65,7 @@ Route::post('/contacts', [
     'uses' => 'Frontend\MainController@contactPost'
 ]);
 
-Route::get('/sunday-schedule', [
+Route::get('/upcoming-schedule', [
     'as' => 'sundaySchedule',
     'uses' => 'Frontend\MainController@sundaySchedule'
 ]);
