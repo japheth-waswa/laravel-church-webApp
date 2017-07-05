@@ -168,7 +168,7 @@
                         || Route::currentRouteName() == 'sundaypage.create'? 'active open' : '' }} ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
-                    <span class="title">Sundays</span>
+                    <span class="title">Schedules</span>
                     @if(Route::currentRouteName() == 'sunday.list' 
                     || Route::currentRouteName() == 'sunday.edit'
                     || Route::currentRouteName() == 'sunday.create'
@@ -182,12 +182,12 @@
                 <ul class="sub-menu">
                     <li class="nav-item {{ Route::currentRouteName() == 'sunday.list' ? 'active' : '' }}">
                         <a href="{{route('sunday.list')}}" class="nav-link ">
-                            <span class="title">Sunday Schedules</span>
+                            <span class="title">All Schedules</span>
                         </a>
                     </li>
                     <li class="nav-item {{ Route::currentRouteName() == 'sunday.create' ? 'active' : '' }}">
                         <a href="{{route('sunday.create')}}" class="nav-link ">
-                            <span class="title">Add Sunday Schedule</span>
+                            <span class="title">Add Schedule</span>
                         </a>
                     </li>
                 </ul>

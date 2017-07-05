@@ -47,7 +47,8 @@ $sundayData = Helpers::sundaySchedule();?>
             @foreach($chunkedPages as $sundayPage)
             <div class="col-md-{{ $columnBootstrap }}">
                 <div class="panel panel-default">
-                    <div class="ppanel-heading text-bold text-warning"><h3>Page: {{ $sundayPage['page_order'] }}</h3></div>
+                    <div class="ppanel-heading text-bold text-warning">
+                    <h3 style="margin:3%;">Page: {{ $sundayPage['page_order'] }}</h3></div>
                     <div class="panel-body">
                         {!! $sundayPage['page_content'] !!}
                     </div>

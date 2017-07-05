@@ -2,9 +2,9 @@
 
 @section('title')
 @if(Route::currentRouteName() == 'sundayschedule.edit')
-Edit Sunday Schedule
+Edit Schedule
 @else
-Add Sunday Schedule
+Add Schedule
 @endif
 
 @endsection
@@ -26,12 +26,12 @@ Add Sunday Schedule
     <!-- BEGIN PAGE HEADER-->
 
     @if(Route::currentRouteName() == 'sunday.edit')
-    <h1 class="page-theme_title"> Edit Sunday Schedule
-        <small>edit sunday schedule</small>
+    <h1 class="page-theme_title"> Edit Schedule
+        <small>edit schedule</small>
     </h1>
     @else
-    <h1 class="page-theme_title"> Add Sunday Schedule
-        <small>add new sunday schedule</small>
+    <h1 class="page-theme_title"> Add Schedule
+        <small>add new schedule</small>
     </h1>
     @endif
 
@@ -43,14 +43,14 @@ Add Sunday Schedule
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="{{route('sunday.list')}}">Sunday Schedule</a>
+                <a href="{{route('sunday.list')}}">Schedule</a>
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
                 @if(Route::currentRouteName() == 'sunday.edit')
-                <span>Edit Sunday Schedule</span>
+                <span>Edit Schedule</span>
                 @else
-                <span>Add Sunday Schedule</span>
+                <span>Add Schedule</span>
                 @endif
 
             </li>
@@ -68,9 +68,9 @@ Add Sunday Schedule
                     <div class="caption font-dark">
                         <i class="icon-pencil font-dark"></i>
                         @if(Route::currentRouteName() == 'sunday.edit')
-                        <span class="caption-subject bold uppercase">Edit Sunday Schedule</span>
+                        <span class="caption-subject bold uppercase">Edit Schedule</span>
                         @else
-                        <span class="caption-subject bold uppercase">Add Sunday Schedule</span>
+                        <span class="caption-subject bold uppercase">Add Schedule</span>
                         @endif
                     </div>
                 </div>
@@ -106,7 +106,7 @@ Add Sunday Schedule
                             <div class="form-group form-md-line-input form-md-floating-label">
                                 <input type="text" class="form-control input-medium date-picker" id="form_control_1" name="sunday_date" required="" 
                                        value="<?php echo null !== old('sunday_date') ? old('sunday_date') : (null !== ($sundayschedule) ? date("m/d/Y", strtotime($sundayschedule->sunday_date)) : null); ?>">
-                                <label for="form_control_1">Sunday Date</label>
+                                <label for="form_control_1">Date</label>
                             </div>
                             <div class="form-group form-md-radios">
                                 <label>Page Column Count:</label>
@@ -144,9 +144,7 @@ Add Sunday Schedule
                             </div>
                             <div class="form-group form-md-line-input form-md-floating-label">
                                 <textarea class="form-control" rows="3" name="theme_description" required="" 
-                                          style="margin: 0px -1px 0px 0px; height: 126px; width: 502px;">
-                                              <?php echo null !== old('theme_description') ? old('theme_description') : (null !== ($sundayschedule) ? $sundayschedule->theme_description : null); ?>
-                                </textarea>
+                                          style="margin: 0px -1px 0px 0px; height: 126px; width: 502px;"><?php echo null !== old('theme_description') ? old('theme_description') : (null !== ($sundayschedule) ? $sundayschedule->theme_description : null); ?></textarea>
                                 <label for="form_control_1">Theme Description</label>
                             </div>
 

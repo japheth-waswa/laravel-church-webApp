@@ -1,7 +1,7 @@
 @extends('admin.partials.master')
 
 @section('title')
-Sunday Schedule List
+Schedule List
 @endsection
 
 @section('stylespagelevel')
@@ -17,8 +17,8 @@ Sunday Schedule List
 <div class="page-content">
     <!-- BEGIN PAGE HEADER-->
 
-    <h1 class="page-title"> Sunday Schedule List
-        <small>all sunday schedules listing</small>
+    <h1 class="page-title"> Schedule List
+        <small>all schedules listing</small>
     </h1>
     <div class="page-bar">
         <ul class="page-breadcrumb">
@@ -28,7 +28,7 @@ Sunday Schedule List
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <span>Sunday Schedules</span>
+                <span>Schedules</span>
             </li>
         </ul>
 
@@ -43,7 +43,7 @@ Sunday Schedule List
                 <div class="portlet-title">
                     <div class="caption font-dark">
                         <i class="icon-list font-dark"></i>
-                        <span class="caption-subject bold uppercase"> Sunday Schedules</span>
+                        <span class="caption-subject bold uppercase"> Schedules</span>
                     </div>
                 </div>
                 <div class="portlet-body">
@@ -54,7 +54,7 @@ Sunday Schedule List
                                 <div class="btn-group">
 
                                     <a href="{{route('sunday.create')}}">
-                                        <button id="sample_editable_1_new" class="btn sbold green"> Add New Sunday Schedule
+                                        <button id="sample_editable_1_new" class="btn sbold green"> Add New Schedule
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </a>
@@ -92,7 +92,7 @@ Sunday Schedule List
                             <tr>
                                 <th></th>
                                 <th> Theme title </th>
-                                <th> Sunday Date</th>
+                                <th> Date</th>
                                 <th> Pages</th>
                                 <th> Status </th>
                                 <th> Actions </th>
@@ -170,7 +170,7 @@ Sunday Schedule List
                     </table>
                     @else
                     <div class="alert alert-danger">
-                        <p>Please add sunday schedules</p>
+                        <p>Please add schedules</p>
                     </div>
                     @endif
                 </div>
