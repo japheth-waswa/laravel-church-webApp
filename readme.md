@@ -65,7 +65,7 @@ Congragulations installation has been sucessful!
 
 
 ## Demo
-For demo http://waswachurch.azurewebsites.net
+For demo 
 
 ## Acknowledgments
 
